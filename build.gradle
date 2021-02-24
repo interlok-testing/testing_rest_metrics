@@ -1,6 +1,7 @@
 ext {
   interlokParentGradle = 'https://nexus.proagrica-tooling.dev/repository/static/config/interlok/gradle-build-parent/v2.0/build.gradle'
   interlokVersion = '4.0-SNAPSHOT'
+  buildEnv = 'dev'
 }
 
 allprojects {
