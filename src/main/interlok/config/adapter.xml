@@ -126,8 +126,8 @@
                 <url>http://localhost:8080/api/fail</url>
                 <content-type>text/plain</content-type>
                 <method>GET</method>
-                <response-header-handler class="http-discard-response-headers"/>
-                <request-header-provider class="http-no-request-headers"/>
+                <response-header-handler class="apache-http-discard-response-headers"/>
+                <request-header-provider class="apache-http-no-request-headers"/>
                 <authenticator class="http-no-authentication"/>
               </apache-http-request-service>
             </services>
@@ -156,8 +156,8 @@
                 <url>http://localhost:8080/api/success</url>
                 <content-type>text/plain</content-type>
                 <method>GET</method>
-                <response-header-handler class="http-discard-response-headers"/>
-                <request-header-provider class="http-no-request-headers"/>
+                <response-header-handler class="apache-http-discard-response-headers"/>
+                <request-header-provider class="apache-http-no-request-headers"/>
                 <authenticator class="http-no-authentication"/>
               </apache-http-request-service>
             </services>
