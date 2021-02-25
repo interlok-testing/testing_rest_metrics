@@ -1,5 +1,5 @@
 ext {
-  interlokParentGradle = 'https://nexus.proagrica-tooling.dev/repository/static/config/interlok/gradle-build-parent/v2.0/build.gradle'
+  interlokParentGradle = 'https://raw.githubusercontent.com/adaptris-labs/interlok-build-parent/master/build.gradle'
   interlokVersion = '4.0-SNAPSHOT'
   buildEnv = 'dev'
 }
@@ -9,6 +9,7 @@ allprojects {
 }
 
 dependencies {
+  interlokRuntime ("com.adaptris:interlok-apache-http:$interlokVersion")
   interlokRuntime ("com.adaptris:interlok-json:$interlokVersion")
   interlokRuntime ("com.adaptris:interlok-rest-metrics-profiler:$interlokVersion")
   interlokRuntime ("com.adaptris:interlok-rest-metrics-jvm:$interlokVersion")

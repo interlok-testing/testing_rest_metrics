@@ -121,7 +121,7 @@
           <service-collection class="service-list">
             <unique-id>angry-mclean</unique-id>
             <services>
-              <http-request-service>
+              <apache-http-request-service>
                 <unique-id>call-fail</unique-id>
                 <url>http://localhost:8080/api/fail</url>
                 <content-type>text/plain</content-type>
@@ -129,7 +129,7 @@
                 <response-header-handler class="http-discard-response-headers"/>
                 <request-header-provider class="http-no-request-headers"/>
                 <authenticator class="http-no-authentication"/>
-              </http-request-service>
+              </apache-http-request-service>
             </services>
           </service-collection>
           <producer class="null-message-producer">
@@ -151,7 +151,7 @@
           <service-collection class="service-list">
             <unique-id>angry-mclean</unique-id>
             <services>
-              <http-request-service>
+              <apache-http-request-service>
                 <unique-id>call-success</unique-id>
                 <url>http://localhost:8080/api/success</url>
                 <content-type>text/plain</content-type>
@@ -159,7 +159,7 @@
                 <response-header-handler class="http-discard-response-headers"/>
                 <request-header-provider class="http-no-request-headers"/>
                 <authenticator class="http-no-authentication"/>
-              </http-request-service>
+              </apache-http-request-service>
             </services>
           </service-collection>
           <producer class="null-message-producer">
