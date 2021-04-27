@@ -111,7 +111,7 @@
         <standard-workflow>
           <consumer class="polling-trigger">
             <unique-id>determined-jennings</unique-id>
-            <poller class="fixed-interval-poller">
+            <poller class="random-interval-poller">
               <poll-interval>
                 <unit>SECONDS</unit>
                 <interval>30</interval>
@@ -141,7 +141,7 @@
         <standard-workflow>
           <consumer class="polling-trigger">
             <unique-id>determined-jennings</unique-id>
-            <poller class="fixed-interval-poller">
+            <poller class="random-interval-poller">
               <poll-interval>
                 <unit>SECONDS</unit>
                 <interval>5</interval>

@@ -24,9 +24,7 @@
       "dashes": false,
       "datasource": "Prometheus",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fill": 1,
@@ -40,6 +38,7 @@
       "hiddenSeries": false,
       "id": 2,
       "legend": {
+        "alignAsTable": false,
         "avg": false,
         "current": false,
         "max": false,
@@ -55,7 +54,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.2",
+      "pluginVersion": "7.5.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -65,17 +64,22 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "workflow_count",
+          "exemplar": true,
+          "expr": "rate(workflow_count_total[5m])",
+          "format": "time_series",
           "instant": false,
           "interval": "",
-          "intervalFactor": 2,
-          "legendFormat": "Count - {{workflow}}",
+          "intervalFactor": 1,
+          "legendFormat": "Count - {{component}}",
           "refId": "A"
         },
         {
-          "expr": "workflow_fail_count",
+          "exemplar": true,
+          "expr": "rate(workflow_fail_count_total[5m])",
+          "instant": false,
           "interval": "",
-          "legendFormat": "Failed - {{workflow}}",
+          "intervalFactor": 1,
+          "legendFormat": "Failed - {{component}}",
           "refId": "B"
         }
       ],
@@ -127,9 +131,7 @@
       "dashes": false,
       "datasource": "Prometheus",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fill": 1,
@@ -158,7 +160,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.2",
+      "pluginVersion": "7.5.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -168,11 +170,12 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "workflow_avgmillis",
+          "exemplar": true,
+          "expr": "workflow_avgnanos",
           "instant": false,
           "interval": "",
           "intervalFactor": 2,
-          "legendFormat": "{{workflow}}",
+          "legendFormat": "{{component}}",
           "refId": "A"
         }
       ],
@@ -180,7 +183,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Workflow Average Millis",
+      "title": "Workflow Average Nanos",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -219,7 +222,7 @@
     }
   ],
   "refresh": "30s",
-  "schemaVersion": 26,
+  "schemaVersion": 27,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -233,5 +236,5 @@
   "timezone": "",
   "title": "Interlok",
   "uid": "XyHj4tsMk",
-  "version": 4
+  "version": 1
 }

@@ -2,7 +2,7 @@
 
 ```shell
 gradle clean install
-docker-compouse up -d
+docker-compose up -d
 ```
 
 Dashboards:
@@ -12,4 +12,5 @@ Dashboards:
 
 Prometheus:
 
-- [workflow_avgmillis](http://localhost:9090/graph?g0.expr=workflow_avgmillis&g0.tab=1&g0.stacked=0&g0.range_input=1h)
+- [workflow_avgnanos](http://localhost:9090/graph?g0.expr=workflow_avgnanos&g0.tab=1&g0.stacked=0&g0.range_input=1h)
+- [workflow_count_total](http://localhost:9090/graph?g0.expr=workflow_count_total&g0.tab=1&g0.stacked=0&g0.range_input=1h)
