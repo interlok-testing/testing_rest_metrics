@@ -1,11 +1,19 @@
+plugins {
+  // https://github.com/nemerosa/versioning
+  id 'net.nemerosa.versioning' version '2.14.0'
+}
+
 ext {
   interlokParentGradle = 'https://raw.githubusercontent.com/adaptris/interlok-build-parent/main/v5/build.gradle'
   interlokVersion = '5.0-SNAPSHOT'
-  buildEnv = 'dev'
+  // Include the WAR file since by default it is excluded.
+  includeWar='true'
 }
 
 allprojects {
   apply from: "${interlokParentGradle}"
+  // specify the version of the configuration.
+  version=versioning.info.full
 }
 
 dependencies {
@@ -15,4 +23,7 @@ dependencies {
   interlokRuntime ("com.adaptris:interlok-rest-metrics-jvm:$interlokVersion")
   interlokRuntime ("com.adaptris:interlok-rest-health-check:$interlokVersion")
   interlokRuntime ("com.adaptris:interlok-rest-provider-prometheus:$interlokVersion")
+
+  interlokJavadocs group: "com.adaptris", name: "interlok-apache-http", version: "$interlokVersion", classifier: "javadoc", changing: true, transitive: false  
+  interlokJavadocs group: "com.adaptris", name: "interlok-json", version: "$interlokVersion", classifier: "javadoc", changing: true, transitive: false
 }
