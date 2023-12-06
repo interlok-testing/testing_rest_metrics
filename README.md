@@ -1,5 +1,8 @@
 # Interlok, Prometheus and Grafana
 
+[![license](https://img.shields.io/github/license/interlok-testing/testing_rest_metrics.svg)](https://github.com/interlok-testing/testing_rest_metrics/blob/develop/LICENSE)
+[![Actions Status](https://github.com/interlok-testing/testing_rest_metrics/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/interlok-testing/testing_rest_metrics/actions/workflows/gradle-build.yml)
+
 ```shell
 gradle clean install
 docker-compose up -d
