@@ -1,7 +1,6 @@
 ext {
   testingCommonGradle = "https://raw.githubusercontent.com/interlok-testing/testing_common/refs/heads/master/common.gradle?timestamp=${new Date().getTime()}"
 //  testingCommonGradle = "../testing_common/common.gradle"
-  interlokTestingVersion = "0.1"
   restAssuredVersion = "5.5.0"
 }
 
@@ -22,7 +21,6 @@ dependencies {
 
   testImplementation "io.rest-assured:rest-assured:$restAssuredVersion"
   testImplementation "io.rest-assured:json-path:$restAssuredVersion"
-  testImplementation group: "com.adaptris", name: "interlok-testing-common", version: "$interlokTestingVersion"
 }
 
 tasks.named('functionalTest', Test) {
